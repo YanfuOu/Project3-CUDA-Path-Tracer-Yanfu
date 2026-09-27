@@ -260,14 +260,19 @@ __global__ void shadeFakeMaterial(
             // If the material indicates that the object was a light, "light" the ray
             if (material.emittance > 0.0f) {
                 pathSegments[idx].color *= (materialColor * material.emittance);
+                pathSegments[idx].remainingBounces = 0; // hit the light, stop the bounce
             }
             // Otherwise, do some pseudo-lighting computation. This is actually more
             // like what you would expect from shading in a rasterizer like OpenGL.
             // TODO: replace this! you should be able to start with basically a one-liner
             else {
-                float lightTerm = glm::dot(intersection.surfaceNormal, glm::vec3(0.0f, 1.0f, 0.0f));
-                pathSegments[idx].color *= (materialColor * lightTerm) * 0.3f + ((1.0f - intersection.t * 0.02f) * materialColor) * 0.7f;
-                pathSegments[idx].color *= u01(rng); // apply some noise because why not
+                // float lightTerm = glm::dot(intersection.surfaceNormal, glm::vec3(0.0f, 1.0f, 0.0f));
+                // pathSegments[idx].color *= (materialColor * lightTerm) * 0.3f + ((1.0f - intersection.t * 0.02f) * materialColor) * 0.7f;
+                // pathSegments[idx].color *= u01(rng); // apply some noise because why not
+
+                // calculating the intersect point
+                glm::vec3 intersect = getPointOnRay(pathSegments[idx].ray, intersection.t); 
+                scatterRay(pathSegments[idx], intersect, intersection.surfaceNormal, material, rng); 
             }
             // If there was no intersection, color the ray black.
             // Lots of renderers use 4 channel color, RGBA, where A = alpha, often
@@ -276,6 +281,7 @@ __global__ void shadeFakeMaterial(
         }
         else {
             pathSegments[idx].color = glm::vec3(0.0f);
+            pathSegments[idx].remainingBounces = 0; 
         }
     }
 }
@@ -285,13 +291,20 @@ __global__ void finalGather(int nPaths, glm::vec3* image, PathSegment* iteration
 {
     int index = (blockIdx.x * blockDim.x) + threadIdx.x;
 
-    if (index < nPaths)
+    if (index < nPaths && iterationPaths[index].remainingBounces == 0)
     {
         PathSegment iterationPath = iterationPaths[index];
         image[iterationPath.pixelIndex] += iterationPath.color;
     }
 }
 
+// helper to determine if a traced path has been terminated
+struct isTerminated {
+    __host__ __device__
+    bool operator()(const PathSegment& path) {
+        return path.remainingBounces == 0;
+    }
+};
 /**
  * Wrapper for the __global__ call that sets up the kernel calls and does a ton
  * of memory management
@@ -388,7 +401,18 @@ void pathtrace(uchar4* pbo, int frame, int iter)
             dev_paths,
             dev_materials
         );
-        iterationComplete = true; // TODO: should be based off stream compaction results.
+
+        dim3 numBlocksPixels = (pixelcount + blockSize1d - 1) / blockSize1d;
+        finalGather<<<numBlocksPixels, blockSize1d>>>(num_paths, dev_image, dev_paths);
+
+        // TODO: Stream compact away all of the terminated paths
+        // perform check for all remainingBounces are 0 using stream compaction. 
+        // Aka: ray hits light, misses, or hit max depth. If so, remove from dev_paths 
+        PathSegment* new_end =  thrust::remove_if(thrust::device, dev_paths, dev_paths + num_paths, isTerminated()); 
+        num_paths = new_end - dev_paths; // subtracting pointers of the same types gives the number of elements between them
+        iterationComplete = (num_paths == 0); 
+
+        // iterationComplete = true; // TODO: should be based off stream compaction results.
 
         if (guiData != NULL)
         {

@@ -1,3 +1,4 @@
+#include "glm/detail/type_vec.hpp"
 #include "interactions.h"
 
 #include "utilities.h"
@@ -54,4 +55,21 @@ __host__ __device__ void scatterRay(
     // TODO: implement this.
     // A basic implementation of pure-diffuse shading will just call the
     // calculateRandomDirectionInHemisphere defined above.
+
+    // throughput
+    pathSegment.color *= m.color; 
+
+    // new ray, where the bounce starts
+    pathSegment.ray.origin = intersect;  
+
+    // new direction from the BSDF diffuse material
+    pathSegment.ray.direction = calculateRandomDirectionInHemisphere(normal, rng); // for diffuse material bounce
+
+    pathSegment.remainingBounces--; 
+
+    // after hitting max bounce and haven't hit a light yet, set the color to black
+    if (pathSegment.remainingBounces == 0) {
+        pathSegment.color = glm::vec3(0.0f); 
+    }
+
 }
