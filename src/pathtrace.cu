@@ -6,6 +6,7 @@
 #include <thrust/execution_policy.h>
 #include <thrust/random.h>
 #include <thrust/remove.h>
+#include <thrust/sort.h>
 
 #include "sceneStructs.h"
 #include "scene.h"
@@ -16,6 +17,7 @@
 #include "interactions.h"
 
 #define ERRORCHECK 1
+#define SORT_BY_MATERIAL 1
 
 #define FILENAME (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 #define checkCUDAError(msg) checkCUDAErrorFn(msg, FILENAME, __LINE__)
@@ -215,6 +217,7 @@ __global__ void computeIntersections(
         if (hit_geom_index == -1)
         {
             intersections[path_index].t = -1.0f;
+            intersections[path_index].materialId = -1; // setting material id to -1 for for misses
         }
         else
         {
@@ -305,6 +308,14 @@ struct isTerminated {
         return path.remainingBounces == 0;
     }
 };
+
+// struct for the thrust::sort_by_key function
+struct MaterialIdLess {
+    __host__ __device__
+    bool operator()(const ShadeableIntersection& a, const ShadeableIntersection& b) const {
+        return a.materialId < b.materialId; 
+    }
+};
 /**
  * Wrapper for the __global__ call that sets up the kernel calls and does a ton
  * of memory management
@@ -381,6 +392,14 @@ void pathtrace(uchar4* pbo, int frame, int iter)
             hst_scene->geoms.size(),
             dev_intersections
         );
+#ifdef SORT_BY_MATERIAL
+        // Part 1.2 - sort by material type
+        thrust::sort_by_key(
+            thrust::device,
+            dev_intersections, dev_intersections + num_paths,
+            dev_paths,
+            MaterialIdLess());
+#endif
         checkCUDAError("trace one bounce");
         cudaDeviceSynchronize();
         depth++;
