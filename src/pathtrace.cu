@@ -146,18 +146,32 @@ __global__ void generateRayFromCamera(Camera cam, int iter, int traceDepth, Path
         int index = x + (y * cam.resolution.x);
         PathSegment& segment = pathSegments[index];
 
-        segment.ray.origin = cam.position;
         segment.color = glm::vec3(1.0f, 1.0f, 1.0f);
 
-        // TODO: implement antialiasing by jittering the ray
         thrust::default_random_engine rng = makeSeededRandomEngine(iter, index, 0);
-        thrust::uniform_real_distribution<float> u01(0, 1); 
-        float sx = (float)x + u01(rng); 
+        thrust::uniform_real_distribution<float> u01(0, 1);
+        float sx = (float)x + u01(rng);
         float sy = (float)y + u01(rng);
-        segment.ray.direction = glm::normalize(cam.view
-            - cam.right * cam.pixelLength.x * ((float)sx - (float)cam.resolution.x * 0.5f)
-            - cam.up * cam.pixelLength.y * ((float)sy - (float)cam.resolution.y * 0.5f)
+
+        // Pinhole ray through a random point in the pixel (antialiasing).
+        glm::vec3 pinholeDir = glm::normalize(cam.view
+            - cam.right * cam.pixelLength.x * (sx - (float)cam.resolution.x * 0.5f)
+            - cam.up * cam.pixelLength.y * (sy - (float)cam.resolution.y * 0.5f)
         );
+
+        // Thin lens: shift the origin on the aperture and aim at the same focal point.
+        const float lensRadius = 0.15f;
+        const float focalDistance = 8.5f;
+
+        float r = lensRadius * sqrtf(u01(rng));
+        float theta = u01(rng) * TWO_PI;
+        glm::vec3 lensOffset = cam.right * (r * cosf(theta)) + cam.up * (r * sinf(theta));
+
+        float tFocus = focalDistance / glm::dot(pinholeDir, cam.view);
+        glm::vec3 focusPoint = cam.position + tFocus * pinholeDir;
+
+        segment.ray.origin = cam.position + lensOffset;
+        segment.ray.direction = glm::normalize(focusPoint - segment.ray.origin);
 
         segment.pixelIndex = index;
         segment.remainingBounces = traceDepth;
