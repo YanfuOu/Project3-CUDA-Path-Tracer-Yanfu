@@ -84,4 +84,5 @@ struct ShadeableIntersection
   float t;
   glm::vec3 surfaceNormal;
   int materialId;
+  int outside; // 1 if the ray hit this surface from outside
 };

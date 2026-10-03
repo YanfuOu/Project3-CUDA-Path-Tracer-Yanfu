@@ -201,7 +201,7 @@ __global__ void computeIntersections(
         glm::vec3 normal;
         float t_min = FLT_MAX;
         int hit_geom_index = -1;
-        bool outside = true;
+        bool hitOutside = true;
 
         glm::vec3 tmp_intersect;
         glm::vec3 tmp_normal;
@@ -212,6 +212,7 @@ __global__ void computeIntersections(
         {
             Geom& geom = geoms[i];
 
+            bool outside = true;
             if (geom.type == CUBE)
             {
                 t = boxIntersectionTest(geom, pathSegment.ray, tmp_intersect, tmp_normal, outside);
@@ -230,6 +231,7 @@ __global__ void computeIntersections(
                 hit_geom_index = i;
                 intersect_point = tmp_intersect;
                 normal = tmp_normal;
+                hitOutside = outside;
             }
         }
 
@@ -244,6 +246,7 @@ __global__ void computeIntersections(
             intersections[path_index].t = t_min;
             intersections[path_index].materialId = geoms[hit_geom_index].materialid;
             intersections[path_index].surfaceNormal = normal;
+            intersections[path_index].outside = hitOutside ? 1 : 0;
         }
     }
 }
@@ -259,6 +262,7 @@ __global__ void computeIntersections(
 // bump mapping.
 __global__ void shadeFakeMaterial(
     int iter,
+    int depth,
     int num_paths,
     ShadeableIntersection* shadeableIntersections,
     PathSegment* pathSegments,
@@ -273,7 +277,7 @@ __global__ void shadeFakeMaterial(
           // Set up the RNG
           // LOOK: this is how you use thrust's RNG! Please look at
           // makeSeededRandomEngine as well.
-            thrust::default_random_engine rng = makeSeededRandomEngine(iter, idx, 0);
+            thrust::default_random_engine rng = makeSeededRandomEngine(iter, idx, depth);
             thrust::uniform_real_distribution<float> u01(0, 1);
 
             Material material = materials[intersection.materialId];
@@ -294,7 +298,7 @@ __global__ void shadeFakeMaterial(
 
                 // calculating the intersect point
                 glm::vec3 intersect = getPointOnRay(pathSegments[idx].ray, intersection.t); 
-                scatterRay(pathSegments[idx], intersect, intersection.surfaceNormal, material, rng); 
+                scatterRay(pathSegments[idx], intersect, intersection.surfaceNormal, material, rng, intersection.outside != 0); 
             }
             // If there was no intersection, color the ray black.
             // Lots of renderers use 4 channel color, RGBA, where A = alpha, often
@@ -434,6 +438,7 @@ void pathtrace(uchar4* pbo, int frame, int iter)
 
         shadeFakeMaterial<<<numblocksPathSegmentTracing, blockSize1d>>>(
             iter,
+            depth,
             num_paths,
             dev_intersections,
             dev_paths,

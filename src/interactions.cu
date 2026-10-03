@@ -1,3 +1,4 @@
+#include "glm/detail/func_geometric.hpp"
 #include "glm/detail/type_vec.hpp"
 #include "interactions.h"
 
@@ -50,20 +51,60 @@ __host__ __device__ void scatterRay(
     glm::vec3 intersect,
     glm::vec3 normal,
     const Material &m,
-    thrust::default_random_engine &rng)
+    thrust::default_random_engine &rng,
+    bool outside)
 {
     // TODO: implement this.
     // A basic implementation of pure-diffuse shading will just call the
     // calculateRandomDirectionInHemisphere defined above.
 
-    // throughput
-    pathSegment.color *= m.color; 
+    // for diffuse material type
+    if(m.hasReflective == 0.0f && m.hasRefractive == 0.0f) {
+            // throughput
+        pathSegment.color *= m.color; 
 
-    // new ray, where the bounce starts
-    pathSegment.ray.origin = intersect;  
+        // new ray, where the bounce starts
+        pathSegment.ray.origin = intersect;  
 
-    // new direction from the BSDF diffuse material
-    pathSegment.ray.direction = calculateRandomDirectionInHemisphere(normal, rng); // for diffuse material bounce
+        // new direction from the BSDF diffuse material
+        pathSegment.ray.direction = calculateRandomDirectionInHemisphere(normal, rng); // for diffuse material bounce
+    }
+    // for specular material type 
+    else if(m.hasReflective == 1.0f && m.hasRefractive == 0.0f) {
+        pathSegment.color *= m.color;
+        pathSegment.ray.direction = glm::reflect(glm::normalize(pathSegment.ray.direction), glm::normalize(normal));
+        pathSegment.ray.origin = intersect + pathSegment.ray.direction * 0.001f;
+    }
+    // for refractive material type
+    else if(m.hasReflective == 1.0f && m.hasRefractive == 1.0f) {
+        glm::vec3 incident = glm::normalize(pathSegment.ray.direction);
+        glm::vec3 n = glm::normalize(normal);
+
+        // Air is 1. Entering glass uses 1/IOR. Leaving glass uses IOR/1.
+        float etaIncident = outside ? 1.0f : m.indexOfRefraction;
+        float etaTransmit = outside ? m.indexOfRefraction : 1.0f;
+        float eta = etaIncident / etaTransmit;
+
+        // Schlick. cosTheta is the angle between the ray and the normal facing it.
+        float cosTheta = glm::clamp(glm::dot(-incident, n), 0.0f, 1.0f);
+        float r0 = (etaIncident - etaTransmit) / (etaIncident + etaTransmit);
+        r0 = r0 * r0;
+        float oneMinusCos = 1.0f - cosTheta;
+        float fresnel = r0 + (1.0f - r0) * oneMinusCos * oneMinusCos * oneMinusCos * oneMinusCos * oneMinusCos;
+
+        thrust::uniform_real_distribution<float> u01(0, 1);
+        glm::vec3 refracted = glm::refract(incident, n, eta);
+        // glm::refract returns 0 on total internal reflection.
+        if (u01(rng) < fresnel || glm::dot(refracted, refracted) < 1e-6f) {
+            pathSegment.ray.direction = glm::reflect(incident, n);
+        } else {
+            pathSegment.ray.direction = refracted;
+        }
+
+        pathSegment.color *= m.color;
+        // Step off the surface along the new ray so the next trace does not hit this same point.
+        pathSegment.ray.origin = intersect + pathSegment.ray.direction * 0.001f;
+    }
 
     pathSegment.remainingBounces--; 
 
@@ -71,5 +112,6 @@ __host__ __device__ void scatterRay(
     if (pathSegment.remainingBounces == 0) {
         pathSegment.color = glm::vec3(0.0f); 
     }
+
 
 }
