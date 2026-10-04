@@ -40,9 +40,13 @@ __host__ __device__ inline float sample1D(PathSegment& path)
     if (dim >= 0 && dim < numPrimes) {
         u = radicalInverse(static_cast<unsigned int>(path.sampleIndex), primes[dim]);
     } else {
+        // in x = a*x + c, 1664525 is a, the multiplier, and 1013904223 is c
         unsigned int x = static_cast<unsigned int>(path.sampleIndex) * 1664525u
             + static_cast<unsigned int>(dim) * 1013904223u;
         x ^= x >> 16;
+        // turns a 32-bit int into a sample in [0, 1) 
+        // 0x00ffffffu keeps the lowest 24 bits , which means the value is 0 - 16777216
+        // spreading ints across [0, 1) in steps of 1/2^24
         u = (x & 0x00ffffffu) * (1.0f / 16777216.0f);
     }
 
