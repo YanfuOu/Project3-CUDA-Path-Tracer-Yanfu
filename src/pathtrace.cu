@@ -18,7 +18,7 @@
 #include "intersections.h"
 #include "interactions.h"
 
-#include "featureToggles.h" // DIRECT_LIGHTING, HALTON_SAMPLING
+#include "featureToggles.h" // DIRECT_LIGHTING, HALTON_SAMPLING, RUSSIAN_ROULETTE
 
 #define ERRORCHECK 1
 #define SORT_BY_MATERIAL 1
@@ -387,6 +387,29 @@ __global__ void shadeFakeMaterial(
                 // calculating the intersect point
                 glm::vec3 intersect = getPointOnRay(pathSegments[idx].ray, intersection.t); 
                 scatterRay(pathSegments[idx], intersect, intersection.surfaceNormal, material, rng, intersection.outside != 0);
+
+#if RUSSIAN_ROULETTE
+                // depth is 1 on the first hit. The first three bounces stay, since
+                // those still carry most of the energy. After that, kill dim paths
+                // with probability 1-q and scale survivors by 1/q so the estimate
+                // stays unbiased. Direct-lighting rays never reach this branch.
+                if (depth > 3 && pathSegments[idx].remainingBounces > 0) {
+                    glm::vec3 beta = pathSegments[idx].color;
+                    float q = glm::max(beta.x, glm::max(beta.y, beta.z));
+                    q = glm::clamp(q, 0.05f, 1.0f);
+#if HALTON_SAMPLING
+                    float uSurvive = sample1D(pathSegments[idx]);
+#else
+                    float uSurvive = u01(rng);
+#endif
+                    if (uSurvive > q) {
+                        pathSegments[idx].remainingBounces = 0;
+                        pathSegments[idx].color = glm::vec3(0.0f);
+                    } else {
+                        pathSegments[idx].color /= q;
+                    }
+                }
+#endif
             }
             // If there was no intersection, color the ray black.
             // Lots of renderers use 4 channel color, RGBA, where A = alpha, often
