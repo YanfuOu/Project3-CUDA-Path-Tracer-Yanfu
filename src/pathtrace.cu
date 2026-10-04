@@ -18,9 +18,10 @@
 #include "intersections.h"
 #include "interactions.h"
 
+#include "featureToggles.h" // DIRECT_LIGHTING, HALTON_SAMPLING
+
 #define ERRORCHECK 1
 #define SORT_BY_MATERIAL 1
-#define DIRECT_LIGHTING 1
 
 #define FILENAME (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 #define checkCUDAError(msg) checkCUDAErrorFn(msg, FILENAME, __LINE__)
@@ -165,10 +166,19 @@ __global__ void generateRayFromCamera(Camera cam, int iter, int traceDepth, Path
 
         segment.color = glm::vec3(1.0f, 1.0f, 1.0f);
 
+#if HALTON_SAMPLING
+        // Iteration is already 1-based, so the first Halton sample is not 0.
+        segment.sampleIndex = iter;
+        segment.dimension = 0;
+        segment.scramble = (utilhash((unsigned int)index) & 0x00ffffff) * (1.0f / 16777216.0f);
+        float sx = (float)x + sample1D(segment);
+        float sy = (float)y + sample1D(segment);
+#else
         thrust::default_random_engine rng = makeSeededRandomEngine(iter, index, 0);
         thrust::uniform_real_distribution<float> u01(0, 1);
         float sx = (float)x + u01(rng);
         float sy = (float)y + u01(rng);
+#endif
 
         // Pinhole ray through a random point in the pixel (antialiasing).
         glm::vec3 pinholeDir = glm::normalize(cam.view
@@ -180,8 +190,13 @@ __global__ void generateRayFromCamera(Camera cam, int iter, int traceDepth, Path
         const float lensRadius = 0.15f;
         const float focalDistance = 8.5f;
 
+#if HALTON_SAMPLING
+        float r = lensRadius * sqrtf(sample1D(segment));
+        float theta = sample1D(segment) * TWO_PI;
+#else
         float r = lensRadius * sqrtf(u01(rng));
         float theta = u01(rng) * TWO_PI;
+#endif
         glm::vec3 lensOffset = cam.right * (r * cosf(theta)) + cam.up * (r * sinf(theta));
 
         float tFocus = focalDistance / glm::dot(pinholeDir, cam.view);
@@ -294,11 +309,11 @@ __global__ void shadeFakeMaterial(
         ShadeableIntersection intersection = shadeableIntersections[idx];
         if (intersection.t > 0.0f) // if the intersection exists...
         {
-          // Set up the RNG
-          // LOOK: this is how you use thrust's RNG! Please look at
-          // makeSeededRandomEngine as well.
+          // Halton state lives on the path. The thrust engine is the fallback sampler.
             thrust::default_random_engine rng = makeSeededRandomEngine(iter, idx, depth);
+#if !HALTON_SAMPLING
             thrust::uniform_real_distribution<float> u01(0, 1);
+#endif
 
             Material material = materials[intersection.materialId];
             glm::vec3 materialColor = material.color;
@@ -317,13 +332,22 @@ __global__ void shadeFakeMaterial(
             // checking if a direct ray is applicable
             else if(pathSegments[idx].remainingBounces == 1 && material.hasReflective == 0.0f && material.hasRefractive == 0.0f) {
                 // pick a light uniformly 
-                int lightIndex = glm::min((int)(u01(rng) * numLights), numLights - 1);
+#if HALTON_SAMPLING
+                float uPick = sample1D(pathSegments[idx]);
+                float uX = sample1D(pathSegments[idx]);
+                float uZ = sample1D(pathSegments[idx]);
+#else
+                float uPick = u01(rng);
+                float uX = u01(rng);
+                float uZ = u01(rng);
+#endif
+                int lightIndex = glm::min((int)(uPick * numLights), numLights - 1);
                 Geom light = lights[lightIndex]; 
                 glm::vec3 intersect = getPointOnRay(pathSegments[idx].ray, intersection.t); 
 
                 // getting a point on light
-                float x = u01(rng) - 0.5f;
-                float z = u01(rng) - 0.5f;
+                float x = uX - 0.5f;
+                float z = uZ - 0.5f;
                 glm::vec3 pLight = multiplyMV(light.transform, glm::vec4(x, -0.5f, z, 1.0f));
                 glm::vec3 lightNormal = glm::normalize(multiplyMV(light.invTranspose, glm::vec4(0.0f, -1.0f, 0.0f, 0.0f)));
 

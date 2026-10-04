@@ -8,13 +8,23 @@
 
 __host__ __device__ glm::vec3 calculateRandomDirectionInHemisphere(
     glm::vec3 normal,
-    thrust::default_random_engine &rng)
+    thrust::default_random_engine &rng,
+    PathSegment &path)
 {
+#if HALTON_SAMPLING
+    float u1 = sample1D(path);
+    float u2 = sample1D(path);
+    (void)rng;
+#else
     thrust::uniform_real_distribution<float> u01(0, 1);
+    float u1 = u01(rng);
+    float u2 = u01(rng);
+    (void)path;
+#endif
 
-    float up = sqrt(u01(rng)); // cos(theta)
+    float up = sqrt(u1); // cos(theta)
     float over = sqrt(1 - up * up); // sin(theta)
-    float around = u01(rng) * TWO_PI;
+    float around = u2 * TWO_PI;
 
     // Find a direction that is not the normal based off of whether or not the
     // normal's components are all equal to sqrt(1/3) or whether or not at
@@ -67,10 +77,17 @@ __host__ __device__ void scatterRay(
         pathSegment.ray.origin = intersect;  
 
         // new direction from the BSDF diffuse material
-        pathSegment.ray.direction = calculateRandomDirectionInHemisphere(normal, rng); // for diffuse material bounce
+        pathSegment.ray.direction = calculateRandomDirectionInHemisphere(normal, rng, pathSegment); // for diffuse material bounce
     }
     // for specular material type 
     else if(m.hasReflective == 1.0f && m.hasRefractive == 0.0f) {
+#if HALTON_SAMPLING
+        // Perfect specular consumes no random numbers. Advance two dimensions
+        // so a later diffuse bounce stays on the same Halton coordinates.
+        sample1D(pathSegment);
+        sample1D(pathSegment);
+        (void)rng;
+#endif
         pathSegment.color *= m.color;
         pathSegment.ray.direction = glm::reflect(glm::normalize(pathSegment.ray.direction), glm::normalize(normal));
         pathSegment.ray.origin = intersect + pathSegment.ray.direction * 0.001f;
@@ -92,10 +109,16 @@ __host__ __device__ void scatterRay(
         float oneMinusCos = 1.0f - cosTheta;
         float fresnel = r0 + (1.0f - r0) * oneMinusCos * oneMinusCos * oneMinusCos * oneMinusCos * oneMinusCos;
 
+#if HALTON_SAMPLING
+        float uReflect = sample1D(pathSegment);
+        sample1D(pathSegment);
+#else
         thrust::uniform_real_distribution<float> u01(0, 1);
+        float uReflect = u01(rng);
+#endif
         glm::vec3 refracted = glm::refract(incident, n, eta);
         // glm::refract returns 0 on total internal reflection.
-        if (u01(rng) < fresnel || glm::dot(refracted, refracted) < 1e-6f) {
+        if (uReflect < fresnel || glm::dot(refracted, refracted) < 1e-6f) {
             pathSegment.ray.direction = glm::reflect(incident, n);
         } else {
             pathSegment.ray.direction = refracted;

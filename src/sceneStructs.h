@@ -74,7 +74,11 @@ struct PathSegment
     glm::vec3 color;
     int pixelIndex;
     int remainingBounces;
-    int isDirectRay; 
+    int isDirectRay;
+    // Halton state. Travels with the path through stream compaction.
+    int sampleIndex;
+    int dimension;
+    float scramble;
 };
 
 // Use with a corresponding PathSegment to do:
