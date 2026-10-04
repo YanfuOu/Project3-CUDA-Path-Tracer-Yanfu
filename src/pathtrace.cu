@@ -1,3 +1,4 @@
+#include "glm/detail/func_geometric.hpp"
 #include "pathtrace.h"
 
 #include <cstdio>
@@ -19,6 +20,7 @@
 
 #define ERRORCHECK 1
 #define SORT_BY_MATERIAL 1
+#define DIRECT_LIGHTING 1
 
 #define FILENAME (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 #define checkCUDAError(msg) checkCUDAErrorFn(msg, FILENAME, __LINE__)
@@ -85,6 +87,8 @@ static PathSegment* dev_paths = NULL;
 static ShadeableIntersection* dev_intersections = NULL;
 // TODO: static variables for device memory, any extra info you need, etc
 // ...
+Geom* dev_lights = NULL; 
+int numLights = 0; 
 
 void InitDataContainer(GuiDataContainer* imGuiData)
 {
@@ -113,6 +117,17 @@ void pathtraceInit(Scene* scene)
     cudaMemset(dev_intersections, 0, pixelcount * sizeof(ShadeableIntersection));
 
     // TODO: initialize any extra device memeory you need
+    // calculating all the lights in the scene 
+    std::vector<Geom> lights; 
+    for(const Geom& geom : scene ->geoms) {
+        if (scene->materials[geom.materialid].emittance > 0.0f) {
+            lights.push_back(geom); 
+        }
+    }
+    numLights = lights.size(); 
+    cudaMalloc(&dev_lights, lights.size() * sizeof(Geom)); 
+    cudaMemcpy(dev_lights, lights.data(), lights.size() * sizeof(Geom), cudaMemcpyHostToDevice); 
+
 
     checkCUDAError("pathtraceInit");
 }
@@ -125,6 +140,8 @@ void pathtraceFree()
     cudaFree(dev_materials);
     cudaFree(dev_intersections);
     // TODO: clean up any extra device memory you created
+    cudaFree(dev_lights); 
+    dev_lights = NULL; 
 
     checkCUDAError("pathtraceFree");
 }
@@ -175,6 +192,7 @@ __global__ void generateRayFromCamera(Camera cam, int iter, int traceDepth, Path
 
         segment.pixelIndex = index;
         segment.remainingBounces = traceDepth;
+        segment.isDirectRay = 0; 
     }
 }
 
@@ -266,7 +284,9 @@ __global__ void shadeFakeMaterial(
     int num_paths,
     ShadeableIntersection* shadeableIntersections,
     PathSegment* pathSegments,
-    Material* materials)
+    Material* materials,
+    Geom* lights,
+    int numLights)
 {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     if (idx < num_paths)
@@ -288,6 +308,50 @@ __global__ void shadeFakeMaterial(
                 pathSegments[idx].color *= (materialColor * material.emittance);
                 pathSegments[idx].remainingBounces = 0; // hit the light, stop the bounce
             }
+#if DIRECT_LIGHTING
+            // terminating the direct ray if it's blocked from reaching back to the light source
+            else if (pathSegments[idx].isDirectRay) {
+                pathSegments[idx].color = glm::vec3(0.0f);
+                pathSegments[idx].remainingBounces = 0; 
+            }
+            // checking if a direct ray is applicable
+            else if(pathSegments[idx].remainingBounces == 1 && material.hasReflective == 0.0f && material.hasRefractive == 0.0f) {
+                // pick a light uniformly 
+                int lightIndex = glm::min((int)(u01(rng) * numLights), numLights - 1);
+                Geom light = lights[lightIndex]; 
+                glm::vec3 intersect = getPointOnRay(pathSegments[idx].ray, intersection.t); 
+
+                // getting a point on light
+                float x = u01(rng) - 0.5f;
+                float z = u01(rng) - 0.5f;
+                glm::vec3 pLight = multiplyMV(light.transform, glm::vec4(x, -0.5f, z, 1.0f));
+                glm::vec3 lightNormal = glm::normalize(multiplyMV(light.invTranspose, glm::vec4(0.0f, -1.0f, 0.0f, 0.0f)));
+
+                glm::vec3 toLight = pLight - intersect; 
+                float dist2 = glm::dot(toLight, toLight);
+                glm::vec3 wi = dist2 < 1e-6f ? glm::vec3(0.0f) : glm::normalize(toLight);
+
+                float cosSurf = glm::max(0.0f, glm::dot(glm::normalize(intersection.surfaceNormal), wi));
+                float cosLight = glm::max(0.0f, glm::dot(lightNormal, -wi)); 
+
+                // A backfacing sample or a zero distance makes the weight 0 or NaN.
+                if (cosSurf == 0.0f || cosLight == 0.0f || dist2 < 1e-6f) {
+                    pathSegments[idx].color = glm::vec3(0.0f);
+                    pathSegments[idx].remainingBounces = 0;
+                }
+                else {
+                    glm::vec3 edgeU = multiplyMV(light.transform, glm::vec4(1.0f, 0.0f, 0.0f, 0.0f)); 
+                    glm::vec3 edgeV = multiplyMV(light.transform, glm::vec4(0.0f, 0.0f, 1.0f, 0.0f));
+                    float area = glm::length(glm::cross(edgeU, edgeV));
+                    float pdf = (1.0f / numLights) / area; 
+
+                    pathSegments[idx].color *= (material.color / PI) * cosSurf * cosLight / (dist2 * pdf);
+                    pathSegments[idx].ray.origin = intersect + wi * 0.001f; 
+                    pathSegments[idx].ray.direction = wi;
+                    pathSegments[idx].isDirectRay = 1;
+                }
+            } 
+#endif
             // Otherwise, do some pseudo-lighting computation. This is actually more
             // like what you would expect from shading in a rasterizer like OpenGL.
             // TODO: replace this! you should be able to start with basically a one-liner
@@ -298,7 +362,7 @@ __global__ void shadeFakeMaterial(
 
                 // calculating the intersect point
                 glm::vec3 intersect = getPointOnRay(pathSegments[idx].ray, intersection.t); 
-                scatterRay(pathSegments[idx], intersect, intersection.surfaceNormal, material, rng, intersection.outside != 0); 
+                scatterRay(pathSegments[idx], intersect, intersection.surfaceNormal, material, rng, intersection.outside != 0);
             }
             // If there was no intersection, color the ray black.
             // Lots of renderers use 4 channel color, RGBA, where A = alpha, often
@@ -415,7 +479,7 @@ void pathtrace(uchar4* pbo, int frame, int iter)
             hst_scene->geoms.size(),
             dev_intersections
         );
-#ifdef SORT_BY_MATERIAL
+#if SORT_BY_MATERIAL
         // Part 1.2 - sort by material type
         thrust::sort_by_key(
             thrust::device,
@@ -442,7 +506,9 @@ void pathtrace(uchar4* pbo, int frame, int iter)
             num_paths,
             dev_intersections,
             dev_paths,
-            dev_materials
+            dev_materials,
+            dev_lights,
+            numLights
         );
 
         dim3 numBlocksPixels = (pixelcount + blockSize1d - 1) / blockSize1d;
