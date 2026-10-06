@@ -25,6 +25,8 @@ make -j8
 
 The binary is `build/bin/cis565_path_tracer`. Pass any scene JSON as the argument. Feature switches live in `src/featureToggles.h`; change one and run `make -j` again.
 
+## Features 
+
 ### 1. Depth of field
 
 The camera is modeled as a thin lens. The ray origin is shifted to a random point on a disk of radius `0.15`, and the ray is aimed at the focal plane so that plane stays sharp. In the snowman scene, the focal distance is `10.5`, the distance along the view direction from the camera at `z = 10.5` to the plane `z = 0` through the specular sphere. The specular upper body of the snowman stays in focus, while the brick wall in the back is blurry. Setting the focal distance to `15.27` focuses near the blue back wall. That wall is centered at `z = -5`, about `15.5` from the camera, so the snowman goes soft and the bricks sharpen. Setting `DEPTH_OF_FIELD` to `0` returns to a pinhole: every pixel shares the camera origin, and the whole room is equally sharp.
