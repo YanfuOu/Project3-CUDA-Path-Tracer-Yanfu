@@ -531,6 +531,12 @@ void pathtrace(uchar4* pbo, int frame, int iter)
     PathSegment* dev_path_end = dev_paths + pixelcount;
     int num_paths = dev_path_end - dev_paths;
 
+    // One iteration is enough to see how many rays compaction keeps.
+    if (iter == 1) {
+        printf("COMPACTION bounce %d alive %d\n", depth, num_paths);
+        fflush(stdout);
+    }
+
     // --- PathSegment Tracing Stage ---
     // Shoot ray into scene, bounce between objects, push shading chunks
 
@@ -590,7 +596,12 @@ void pathtrace(uchar4* pbo, int frame, int iter)
         // Aka: ray hits light, misses, or hit max depth. If so, remove from dev_paths 
         PathSegment* new_end =  thrust::remove_if(thrust::device, dev_paths, dev_paths + num_paths, isTerminated()); 
         num_paths = new_end - dev_paths; // subtracting pointers of the same types gives the number of elements between them
-        iterationComplete = (num_paths == 0); 
+        iterationComplete = (num_paths == 0);
+
+        if (iter == 1) {
+            printf("COMPACTION bounce %d alive %d\n", depth, num_paths);
+            fflush(stdout);
+        } 
 
         // iterationComplete = true; // TODO: should be based off stream compaction results.
 
