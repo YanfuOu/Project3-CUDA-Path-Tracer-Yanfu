@@ -188,7 +188,8 @@ __global__ void generateRayFromCamera(Camera cam, int iter, int traceDepth, Path
 
         // Thin lens: shift the origin on the aperture and aim at the same focal point.
         const float lensRadius = 0.15f;
-        const float focalDistance = 8.5f;
+        // Plane through the specular sphere at (0, 4, 0). The camera sits at z = 10.5 and looks down -Z.
+        const float focalDistance = 10.5f;
 
 #if HALTON_SAMPLING
         float r = lensRadius * sqrtf(sample1D(segment));

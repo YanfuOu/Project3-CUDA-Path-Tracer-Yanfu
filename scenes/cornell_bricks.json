@@ -15,22 +15,22 @@
         "diffuse_red":
         {
             "TYPE":"Diffuse",
-            "RGB":[0.85, 0.35, 0.35]
+            "RGB":[1.0, 0.51765, 0.72941]
         },
         "diffuse_penn_crimson":
         {
             "TYPE":"Diffuse",
-            "RGB":[0.59, 0.01, 0.01]
+            "RGB":[0.79, 0.01, 0.01]
         },
-        "diffuse_green":
+        "diffuse_gold":
         {
             "TYPE":"Diffuse",
-            "RGB":[0.35, 0.85, 0.35]
+            "RGB":[1.0, 0.87451, 0.5098]
         },
         "diffuse_blue":
         {
             "TYPE":"Diffuse",
-            "RGB":[0.35, 0.35, 0.85]
+            "RGB":[0.6, 0.76078, 1.0]
         },
         "specular_white":
         {
@@ -63,7 +63,7 @@
             "MATERIAL":"light",
             "TRANS":[0.0,10.0,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[3.0,0.3,3.0]
+            "SCALE":[4.0,0.3,4.0]
         },
         {
             "TYPE":"cube",
@@ -82,2347 +82,625 @@
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,0.05,0.0],
+            "TRANS":[-5.0,0.085,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
+            "SCALE":[0.06,0.17,10.0]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,1.04,0.0],
+            "TRANS":[-5.0,2.5425,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,2.03,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,3.02,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,4.01,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
+            "SCALE":[0.06,0.17,10.0]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
             "TRANS":[-5.0,5.0,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
+            "SCALE":[0.06,0.17,10.0]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,5.99,0.0],
+            "TRANS":[-5.0,7.4575,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
+            "SCALE":[0.06,0.17,10.0]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,6.98,0.0],
+            "TRANS":[-5.0,9.915,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
+            "SCALE":[0.06,0.17,10.0]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,7.97,0.0],
+            "TRANS":[-5.0,1.31375,-4.915],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,8.96,0.0],
+            "TRANS":[-5.0,1.31375,4.915],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,9.95,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,0.545,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,0.545,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,0.545,-3.7125],
+            "TRANS":[-4.87,1.31375,-2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
+            "SCALE":[0.2,2.2875,4.745]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,0.545,-1.2375],
+            "TRANS":[-4.87,1.31375,2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
+            "SCALE":[0.2,2.2875,4.745]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-5.0,1.31375,0.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.06,2.2875,0.17]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-5.0,3.77125,-4.915],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.06,2.2875,0.17]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-5.0,3.77125,4.915],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,0.545,1.2375],
+            "TRANS":[-4.87,3.77125,-3.68625],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
+            "SCALE":[0.2,2.2875,2.2875]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,0.545,3.7125],
+            "TRANS":[-4.87,3.77125,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,0.545,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,0.545,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,0.545,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,1.535,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,1.535,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.2,2.2875,4.745]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,1.535,-4.33125],
+            "TRANS":[-4.87,3.77125,3.68625],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
+            "SCALE":[0.2,2.2875,2.2875]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-5.0,3.77125,-2.4575],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.06,2.2875,0.17]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-5.0,3.77125,2.4575],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.06,2.2875,0.17]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-5.0,6.22875,-4.915],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.06,2.2875,0.17]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-5.0,6.22875,4.915],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,1.535,-2.475],
+            "TRANS":[-4.87,6.22875,-2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
+            "SCALE":[0.2,2.2875,4.745]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,1.535,0.0],
+            "TRANS":[-4.87,6.22875,2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
+            "SCALE":[0.2,2.2875,4.745]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-5.0,6.22875,0.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.06,2.2875,0.17]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-5.0,8.68625,-4.915],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.06,2.2875,0.17]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-5.0,8.68625,4.915],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,1.535,2.475],
+            "TRANS":[-4.87,8.68625,-3.68625],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
+            "SCALE":[0.2,2.2875,2.2875]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,1.535,4.33125],
+            "TRANS":[-4.87,8.68625,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,1.535,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,1.535,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,1.535,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,1.535,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,2.525,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,2.525,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.2,2.2875,4.745]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,2.525,-3.7125],
+            "TRANS":[-4.87,8.68625,3.68625],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,2.525,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,2.525,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,2.525,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
+            "SCALE":[0.2,2.2875,2.2875]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,2.525,-2.475],
+            "TRANS":[-5.0,8.68625,-2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,2.525,0.0],
+            "TRANS":[-5.0,8.68625,2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,2.525,2.475],
+            "TRANS":[5.0,0.085,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.06,0.17,10.0]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,3.515,-4.95],
+            "TRANS":[5.0,2.5425,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,3.515,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,3.515,-4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,3.515,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,3.515,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,3.515,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,3.515,4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,3.515,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,3.515,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,3.515,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,3.515,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,4.505,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,4.505,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,4.505,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,4.505,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,4.505,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,4.505,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,4.505,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,4.505,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,4.505,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,5.495,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,5.495,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,5.495,-4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,5.495,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,5.495,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,5.495,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,5.495,4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,5.495,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,5.495,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,5.495,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,5.495,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,6.485,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,6.485,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,6.485,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,6.485,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,6.485,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,6.485,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,6.485,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,6.485,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,6.485,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,7.475,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,7.475,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,7.475,-4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,7.475,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,7.475,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,7.475,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,7.475,4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,7.475,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,7.475,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,7.475,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,7.475,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,8.465,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,8.465,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,8.465,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,8.465,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,8.465,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,8.465,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,8.465,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,8.465,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,8.465,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,9.455,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,9.455,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,9.455,-4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,9.455,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,9.455,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,9.455,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
-            "TRANS":[-4.87,9.455,4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,9.455,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,9.455,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,9.455,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-5.0,9.455,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,0.05,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,1.04,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,2.03,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,3.02,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,4.01,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
+            "SCALE":[0.06,0.17,10.0]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
             "TRANS":[5.0,5.0,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
+            "SCALE":[0.06,0.17,10.0]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,5.99,0.0],
+            "TRANS":[5.0,7.4575,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
+            "SCALE":[0.06,0.17,10.0]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,6.98,0.0],
+            "TRANS":[5.0,9.915,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
+            "SCALE":[0.06,0.17,10.0]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,7.97,0.0],
+            "TRANS":[5.0,1.31375,-4.915],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,8.96,0.0],
+            "TRANS":[5.0,1.31375,4.915],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,9.95,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.1,10.0]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,0.545,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,0.545,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,0.545,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,0.545,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,0.545,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,0.545,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,0.545,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,0.545,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,0.545,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,1.535,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,1.535,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,1.535,-4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,1.535,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,1.535,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,1.535,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,1.535,4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,1.535,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,1.535,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,1.535,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,1.535,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,2.525,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,2.525,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,2.525,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,2.525,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,2.525,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,2.525,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,2.525,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,2.525,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,2.525,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,3.515,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,3.515,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,3.515,-4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,3.515,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,3.515,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,3.515,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,3.515,4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,3.515,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,3.515,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,3.515,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,3.515,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,4.505,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,4.505,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,4.505,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,4.505,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,4.505,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,4.505,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,4.505,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,4.505,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,4.505,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,5.495,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,5.495,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,5.495,-4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,5.495,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,5.495,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,5.495,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,5.495,4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,5.495,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,5.495,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,5.495,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,5.495,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,6.485,-4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,6.485,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,6.485,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,6.485,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,6.485,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,6.485,3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,6.485,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,6.485,0.0],
+            "MATERIAL":"diffuse_gold",
+            "TRANS":[4.87,1.31375,-2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.2,2.2875,4.745]
         },
         {
             "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,6.485,2.475],
+            "MATERIAL":"diffuse_gold",
+            "TRANS":[4.87,1.31375,2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.2,2.2875,4.745]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,7.475,-4.95],
+            "TRANS":[5.0,1.31375,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,7.475,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,7.475,-4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,7.475,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,7.475,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,7.475,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,7.475,4.33125],
+            "TRANS":[5.0,3.77125,-4.915],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,7.475,-3.7125],
+            "TRANS":[5.0,3.77125,4.915],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,7.475,-1.2375],
+            "MATERIAL":"diffuse_gold",
+            "TRANS":[4.87,3.77125,-3.68625],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.2,2.2875,2.2875]
         },
         {
             "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,7.475,1.2375],
+            "MATERIAL":"diffuse_gold",
+            "TRANS":[4.87,3.77125,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.2,2.2875,4.745]
         },
         {
             "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,7.475,3.7125],
+            "MATERIAL":"diffuse_gold",
+            "TRANS":[4.87,3.77125,3.68625],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.2,2.2875,2.2875]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,8.465,-4.95],
+            "TRANS":[5.0,3.77125,-2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,8.465,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,8.465,-3.7125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,8.465,-1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,8.465,1.2375],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,8.465,3.7125],
+            "TRANS":[5.0,3.77125,2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,8.465,-2.475],
+            "TRANS":[5.0,6.22875,-4.915],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,8.465,0.0],
+            "TRANS":[5.0,6.22875,4.915],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,8.465,2.475],
+            "MATERIAL":"diffuse_gold",
+            "TRANS":[4.87,6.22875,-2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.2,2.2875,4.745]
         },
         {
             "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,9.455,-4.95],
+            "MATERIAL":"diffuse_gold",
+            "TRANS":[4.87,6.22875,2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.2,2.2875,4.745]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,9.455,4.95],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,9.455,-4.33125],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,9.455,-2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,9.455,0.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,9.455,2.475],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,2.375]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_green",
-            "TRANS":[4.87,9.455,4.33125],
+            "TRANS":[5.0,6.22875,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.2,0.89,1.1375]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,9.455,-3.7125],
+            "TRANS":[5.0,8.68625,-4.915],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,9.455,-1.2375],
+            "TRANS":[5.0,8.68625,4.915],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,9.455,1.2375],
+            "MATERIAL":"diffuse_gold",
+            "TRANS":[4.87,8.68625,-3.68625],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.2,2.2875,2.2875]
         },
         {
             "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[5.0,9.455,3.7125],
+            "MATERIAL":"diffuse_gold",
+            "TRANS":[4.87,8.68625,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.06,0.89,0.1]
+            "SCALE":[0.2,2.2875,4.745]
         },
         {
             "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,0.05,-5.0],
+            "MATERIAL":"diffuse_gold",
+            "TRANS":[4.87,8.68625,3.68625],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[9.54,0.1,0.06]
+            "SCALE":[0.2,2.2875,2.2875]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,1.04,-5.0],
+            "TRANS":[5.0,8.68625,-2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[9.54,0.1,0.06]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,2.03,-5.0],
+            "TRANS":[5.0,8.68625,2.4575],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[9.54,0.1,0.06]
+            "SCALE":[0.06,2.2875,0.17]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,3.02,-5.0],
+            "TRANS":[0.0,0.085,-5.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[9.54,0.1,0.06]
+            "SCALE":[9.54,0.17,0.06]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,4.01,-5.0],
+            "TRANS":[0.0,2.5425,-5.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[9.54,0.1,0.06]
+            "SCALE":[9.54,0.17,0.06]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
             "TRANS":[0.0,5.0,-5.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[9.54,0.1,0.06]
+            "SCALE":[9.54,0.17,0.06]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,5.99,-5.0],
+            "TRANS":[0.0,7.4575,-5.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[9.54,0.1,0.06]
+            "SCALE":[9.54,0.17,0.06]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,6.98,-5.0],
+            "TRANS":[0.0,9.915,-5.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[9.54,0.1,0.06]
+            "SCALE":[9.54,0.17,0.06]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,7.97,-5.0],
+            "TRANS":[-4.685,1.31375,-5.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[9.54,0.1,0.06]
+            "SCALE":[0.17,2.2875,0.06]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,8.96,-5.0],
+            "TRANS":[4.685,1.31375,-5.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[9.54,0.1,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,9.95,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[9.54,0.1,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-4.72,0.545,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[4.72,0.545,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
+            "SCALE":[0.17,2.2875,0.06]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_blue",
-            "TRANS":[-3.54,0.545,-4.87],
+            "TRANS":[-2.3425,1.31375,-4.87],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
+            "SCALE":[4.515,2.2875,0.2]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_blue",
-            "TRANS":[-1.18,0.545,-4.87],
+            "TRANS":[2.3425,1.31375,-4.87],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
+            "SCALE":[4.515,2.2875,0.2]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[0.0,1.31375,-5.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.17,2.2875,0.06]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-4.685,3.77125,-5.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.17,2.2875,0.06]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[4.685,3.77125,-5.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.17,2.2875,0.06]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_blue",
-            "TRANS":[1.18,0.545,-4.87],
+            "TRANS":[-3.51375,3.77125,-4.87],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
+            "SCALE":[2.1725,2.2875,0.2]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_blue",
-            "TRANS":[3.54,0.545,-4.87],
+            "TRANS":[0.0,3.77125,-4.87],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-2.36,0.545,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,0.545,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[2.36,0.545,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-4.72,1.535,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[4.72,1.535,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
+            "SCALE":[4.515,2.2875,0.2]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_blue",
-            "TRANS":[-4.13,1.535,-4.87],
+            "TRANS":[3.51375,3.77125,-4.87],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[1.08,0.89,0.2]
+            "SCALE":[2.1725,2.2875,0.2]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-2.3425,3.77125,-5.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.17,2.2875,0.06]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[2.3425,3.77125,-5.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.17,2.2875,0.06]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-4.685,6.22875,-5.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.17,2.2875,0.06]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[4.685,6.22875,-5.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.17,2.2875,0.06]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_blue",
-            "TRANS":[-2.36,1.535,-4.87],
+            "TRANS":[-2.3425,6.22875,-4.87],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
+            "SCALE":[4.515,2.2875,0.2]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_blue",
-            "TRANS":[0.0,1.535,-4.87],
+            "TRANS":[2.3425,6.22875,-4.87],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
+            "SCALE":[4.515,2.2875,0.2]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[0.0,6.22875,-5.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.17,2.2875,0.06]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-4.685,8.68625,-5.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.17,2.2875,0.06]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[4.685,8.68625,-5.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.17,2.2875,0.06]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_blue",
-            "TRANS":[2.36,1.535,-4.87],
+            "TRANS":[-3.51375,8.68625,-4.87],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
+            "SCALE":[2.1725,2.2875,0.2]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_blue",
-            "TRANS":[4.13,1.535,-4.87],
+            "TRANS":[0.0,8.68625,-4.87],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[1.08,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-3.54,1.535,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-1.18,1.535,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[1.18,1.535,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[3.54,1.535,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-4.72,2.525,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[4.72,2.525,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
+            "SCALE":[4.515,2.2875,0.2]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_blue",
-            "TRANS":[-3.54,2.525,-4.87],
+            "TRANS":[3.51375,8.68625,-4.87],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-1.18,2.525,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[1.18,2.525,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[3.54,2.525,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
+            "SCALE":[2.1725,2.2875,0.2]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[-2.36,2.525,-5.0],
+            "TRANS":[-2.3425,8.68625,-5.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
+            "SCALE":[0.17,2.2875,0.06]
         },
         {
             "TYPE":"cube",
             "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,2.525,-5.0],
+            "TRANS":[2.3425,8.68625,-5.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[2.36,2.525,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-4.72,3.515,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[4.72,3.515,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-4.13,3.515,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[1.08,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-2.36,3.515,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[0.0,3.515,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[2.36,3.515,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[4.13,3.515,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[1.08,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-3.54,3.515,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-1.18,3.515,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[1.18,3.515,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[3.54,3.515,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-4.72,4.505,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[4.72,4.505,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-3.54,4.505,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-1.18,4.505,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[1.18,4.505,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[3.54,4.505,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-2.36,4.505,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,4.505,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[2.36,4.505,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-4.72,5.495,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[4.72,5.495,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-4.13,5.495,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[1.08,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-2.36,5.495,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[0.0,5.495,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[2.36,5.495,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[4.13,5.495,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[1.08,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-3.54,5.495,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-1.18,5.495,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[1.18,5.495,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[3.54,5.495,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-4.72,6.485,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[4.72,6.485,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-3.54,6.485,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-1.18,6.485,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[1.18,6.485,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[3.54,6.485,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-2.36,6.485,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,6.485,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[2.36,6.485,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-4.72,7.475,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[4.72,7.475,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-4.13,7.475,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[1.08,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-2.36,7.475,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[0.0,7.475,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[2.36,7.475,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[4.13,7.475,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[1.08,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-3.54,7.475,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-1.18,7.475,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[1.18,7.475,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[3.54,7.475,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-4.72,8.465,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[4.72,8.465,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-3.54,8.465,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-1.18,8.465,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[1.18,8.465,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[3.54,8.465,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-2.36,8.465,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[0.0,8.465,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[2.36,8.465,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-4.72,9.455,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[4.72,9.455,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-4.13,9.455,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[1.08,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[-2.36,9.455,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[0.0,9.455,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[2.36,9.455,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.26,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_blue",
-            "TRANS":[4.13,9.455,-4.87],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[1.08,0.89,0.2]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-3.54,9.455,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[-1.18,9.455,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[1.18,9.455,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
-        },
-        {
-            "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
-            "TRANS":[3.54,9.455,-5.0],
-            "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[0.1,0.89,0.06]
+            "SCALE":[0.17,2.2875,0.06]
         },
         {
             "TYPE":"sphere",
             "MATERIAL":"diffuse_penn_crimson",
             "TRANS":[0.0,1.5,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[3.0,3.0,3.0]
+            "SCALE":[4.0,4.0,4.0]
         },
         {
             "TYPE":"sphere",
             "MATERIAL":"specular_white",
             "TRANS":[0.0,4.0,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[2.0,2.0,2.0]
+            "SCALE":[3.0,3.0,3.0]
         },
         {
             "TYPE":"sphere",
