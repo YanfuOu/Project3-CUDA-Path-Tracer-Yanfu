@@ -67,6 +67,9 @@ __host__ __device__ void scatterRay(
     // TODO: implement this.
     // A basic implementation of pure-diffuse shading will just call the
     // calculateRandomDirectionInHemisphere defined above.
+#if !REFRACTION
+    (void)outside;
+#endif
 
     // for diffuse material type
     if(m.hasReflective == 0.0f && m.hasRefractive == 0.0f) {
@@ -79,19 +82,7 @@ __host__ __device__ void scatterRay(
         // new direction from the BSDF diffuse material
         pathSegment.ray.direction = calculateRandomDirectionInHemisphere(normal, rng, pathSegment); // for diffuse material bounce
     }
-    // for specular material type 
-    else if(m.hasReflective == 1.0f && m.hasRefractive == 0.0f) {
-#if HALTON_SAMPLING
-        // Perfect specular consumes no random numbers. Advance two dimensions
-        // so a later diffuse bounce stays on the same Halton coordinates.
-        sample1D(pathSegment);
-        sample1D(pathSegment);
-        (void)rng;
-#endif
-        pathSegment.color *= m.color;
-        pathSegment.ray.direction = glm::reflect(glm::normalize(pathSegment.ray.direction), glm::normalize(normal));
-        pathSegment.ray.origin = intersect + pathSegment.ray.direction * 0.001f;
-    }
+#if REFRACTION
     // for refractive material type
     else if(m.hasReflective == 1.0f && m.hasRefractive == 1.0f) {
         glm::vec3 incident = glm::normalize(pathSegment.ray.direction);
@@ -126,6 +117,20 @@ __host__ __device__ void scatterRay(
 
         pathSegment.color *= m.color;
         // Step off the surface along the new ray so the next trace does not hit this same point.
+        pathSegment.ray.origin = intersect + pathSegment.ray.direction * 0.001f;
+    }
+#endif
+    // Specular. With refraction disabled, glass takes this path and becomes a mirror.
+    else if(m.hasReflective == 1.0f) {
+#if HALTON_SAMPLING
+        // Perfect specular consumes no random numbers. Advance two dimensions
+        // so a later diffuse bounce stays on the same Halton coordinates.
+        sample1D(pathSegment);
+        sample1D(pathSegment);
+        (void)rng;
+#endif
+        pathSegment.color *= m.color;
+        pathSegment.ray.direction = glm::reflect(glm::normalize(pathSegment.ray.direction), glm::normalize(normal));
         pathSegment.ray.origin = intersect + pathSegment.ray.direction * 0.001f;
     }
 

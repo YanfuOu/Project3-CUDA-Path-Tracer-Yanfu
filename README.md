@@ -1,4 +1,4 @@
-CUDA Path Tracer
+CUDA Path Tracer - Joyful Snowman
 ================
 
 **University of Pennsylvania, CIS 565: GPU Programming and Architecture, Project 3**
@@ -6,10 +6,15 @@ CUDA Path Tracer
 * Yanfu Ou
 * Tested on: Ubuntu 24.04LTS, AMD Ryzen 7 7840HS, Nvidia RTX 5070 Laptop GPU(8GB VRAM), 64GB DDR4 RAM
 
+![image demo](images/snowman-in-brick-FINAL.png)
+
+A CUDA path tracer built around an artistic reimagination of a snowman in a colorful house. Fresnel reflection and refraction shows the snowman's head. The mirror like specular sphere demonstrates the snowman's upper body. Last, but not the least, the crimson red illistrates the snowman's lower body! The snowman sits in a joyful colored room defined by gold, blue, and pink walls!   
+
+The renderer is a combination of diffuse and specular shading, refraction with Fresnel, depth of field, direct lighting, Halton sampling, Russian roulette, stochastic antialiasing, and shading paths sorted into contiguous memory by material type.
 
 ### Features Implemented
-1. Contiguous memory by material type 
-2. Stochastic sampled antialiasing
+
+1. Stochastic sampled antialiasing
 
 | No antialiasing | Antialiasing |
 | --- | --- |
@@ -17,13 +22,13 @@ CUDA Path Tracer
 | ![No antialiasing](images/anti-alising/cornell-no-anti-alising-zoomed.png) | ![Antialiasing](images/anti-alising/cornell-anti-alised-zoomed.png) |
 In the image with no anti-alising, the sphere's edge have very obvious stair casing effect. 
 
-3. Depth of Field (2pt)
+2. Depth of Field (2pt)
 
 | Focused on Cube | Focused on Sphere |
 | --- | --- |
 | ![No antialiasing](images/depth-of-field/cornell-DOF-cube.png) | ![Antialiasing](images/depth-of-field/cornell-DOF-sphere.png) |
 
-4. Refraction (2pt)
+3. Refraction (2pt)
 Blue Sphere in the back
 
 | Front Left view | Inside Box Top View |
@@ -33,7 +38,7 @@ Blue Sphere in the back
 White Sphere in the Back
 ![Antialiasing](images/refraction-reflection/cornell-refraction-specular-og-sphere-front.png)
 
-5. Direct Lighting (2pt)
+4. Direct Lighting (2pt)
 Path Trace Depth of 1 
 
 | No Direct Light | With Direct Lighting |
@@ -47,7 +52,7 @@ Path Trace Depth of 2
 | ![No antialiasing](images/direct-lighting/cornell-direct-ray-no-depth2.png) | ![Antialiasing](images/direct-lighting/cornell-direct-ray-depth2.png) |
 
 
-6. Better Random Sequence (3pt)
+5. Better Random Sequence (3pt)
 
 | Iterations | With Random Sequence | Without Random Sequence |
 | --- | --- | --- | 
@@ -61,4 +66,6 @@ Path Trace Depth of 2
 
 
 
-7. Russian Roulette (1pt) 
+6. Russian Roulette (1pt) 
+
+7. Contiguous memory by material type 

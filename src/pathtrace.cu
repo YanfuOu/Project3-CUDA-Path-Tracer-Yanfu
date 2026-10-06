@@ -18,10 +18,9 @@
 #include "intersections.h"
 #include "interactions.h"
 
-#include "featureToggles.h" // DIRECT_LIGHTING, HALTON_SAMPLING, RUSSIAN_ROULETTE
+#include "featureToggles.h"
 
 #define ERRORCHECK 1
-#define SORT_BY_MATERIAL 1
 
 #define FILENAME (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 #define checkCUDAError(msg) checkCUDAErrorFn(msg, FILENAME, __LINE__)
@@ -171,21 +170,37 @@ __global__ void generateRayFromCamera(Camera cam, int iter, int traceDepth, Path
         segment.sampleIndex = iter;
         segment.dimension = 0;
         segment.scramble = (utilhash((unsigned int)index) & 0x00ffffff) * (1.0f / 16777216.0f);
+#else
+#if STOCHASTIC_ANTIALIASING || DEPTH_OF_FIELD
+        thrust::default_random_engine rng = makeSeededRandomEngine(iter, index, 0);
+        thrust::uniform_real_distribution<float> u01(0, 1);
+#endif
+#endif
+
+#if STOCHASTIC_ANTIALIASING
+#if HALTON_SAMPLING
         float sx = (float)x + sample1D(segment);
         float sy = (float)y + sample1D(segment);
 #else
-        thrust::default_random_engine rng = makeSeededRandomEngine(iter, index, 0);
-        thrust::uniform_real_distribution<float> u01(0, 1);
         float sx = (float)x + u01(rng);
         float sy = (float)y + u01(rng);
 #endif
+#else
+        // Pixel center. Still consume the two sample dimensions so later features stay put.
+        float sx = (float)x + 0.5f;
+        float sy = (float)y + 0.5f;
+#if HALTON_SAMPLING
+        sample1D(segment);
+        sample1D(segment);
+#endif
+#endif
 
-        // Pinhole ray through a random point in the pixel (antialiasing).
         glm::vec3 pinholeDir = glm::normalize(cam.view
             - cam.right * cam.pixelLength.x * (sx - (float)cam.resolution.x * 0.5f)
             - cam.up * cam.pixelLength.y * (sy - (float)cam.resolution.y * 0.5f)
         );
 
+#if DEPTH_OF_FIELD
         // Thin lens: shift the origin on the aperture and aim at the same focal point.
         const float lensRadius = 0.15f;
         // Plane through the specular sphere at (0, 4, 0). The camera sits at z = 10.5 and looks down -Z.
@@ -205,6 +220,14 @@ __global__ void generateRayFromCamera(Camera cam, int iter, int traceDepth, Path
 
         segment.ray.origin = cam.position + lensOffset;
         segment.ray.direction = glm::normalize(focusPoint - segment.ray.origin);
+#else
+        segment.ray.origin = cam.position;
+        segment.ray.direction = pinholeDir;
+#if HALTON_SAMPLING
+        sample1D(segment);
+        sample1D(segment);
+#endif
+#endif
 
         segment.pixelIndex = index;
         segment.remainingBounces = traceDepth;
